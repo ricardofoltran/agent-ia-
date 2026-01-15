@@ -38,5 +38,21 @@
     "rentabilidade": "Variável",
     "aporte_minimo": 100.00,
     "indicado_para": "Perfil arrojado com foco no longo prazo"
-  }
+  },
+  {
+  "nome": "ETF de Mercado Amplo",
+  "categoria": "renda_variavel",
+  "risco": "medio",
+  "rentabilidade": "Variável",
+  "aporte_minimo": 100.00,
+  "indicado_para": "Quem busca diversificação com simplicidade"
+},
+{
+  "nome": "Fundo Imobiliário",
+  "categoria": "renda_variavel",
+  "risco": "medio",
+  "rentabilidade": "Variável",
+  "aporte_minimo": 100.00,
+  "indicado_para": "Quem busca renda periódica e diversificação"
+}
 ]
