@@ -33,19 +33,15 @@ Os dados mockados foram expandidos com a adição de dois novos produtos finance
 Os dados do agente são carregados a partir de arquivos CSV e JSON locais, utilizados como base de conhecimento simulada e incorporados de forma contextual durante a execução, sem uso de informações reais ou sensíveis.
 
 ```python
-import pandas as pd
 import json
+import pandas as pd
 
-# Carregando arquivos CSV
-historico = pd.read_csv("data/historico_atendimento.csv")
-transacoes = pd.read_csv("data/transacoes.csv")
+# ======== CARREGAR DADOS ========
+perfil = json.load(open('./data/perfil_investidor.json'))
+transacoes = pd.read_csv('./data/transacoes.cvs')
+historico = pd.read_csv('./datahistorico.cvs')
+produtos = json.load(open('./data/produtos_financeiro.json'))
 
-# Carregando arquivos JSON
-with open("data/perfil_investidor.json", "r", encoding="utf-8") as f:
-    perfil = json.load(f)
-
-with open("data/produtos_financeiros.json", "r", encoding="utf-8") as f:
-    produtos = json.load(f)
 ````
     
 ### Como os dados são usados no prompt?
