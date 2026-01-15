@@ -129,5 +129,4 @@ Para ajudar com simulações e orientações financeiras adequadas, preciso ente
 
 > Registre aqui ajustes que você fez nos prompts e por quê.
 
-- [Observação 1]
-- [Observação 2]
+
