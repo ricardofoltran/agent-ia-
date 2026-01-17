@@ -32,3 +32,6 @@ ollama serve
 streamlit run src/app.py
 
 ```
+## Evidências de Execução 
+
+<img width="2553" height="1426" alt="Captura de tela 2026-01-17 163834" src="https://github.com/user-attachments/assets/fab6994d-1e9f-4b1c-a05f-5e9cedeb1b8b" />
