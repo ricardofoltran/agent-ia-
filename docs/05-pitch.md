@@ -1,39 +1,35 @@
-# Pitch (3 minutos)
+# 🎤 Pitch – Agente Financeiro Inteligente SAM
 
-> [!TIP]
-> Você pode usar alguns slides pra apoiar no seu Pitch e mostrar sua solução na prática.
- 
-## Roteiro Sugerido
+### 🧩 1. O Problema (30 seg)
 
-### 1. O Problema (30 seg)
-> Qual dor do cliente você resolve?
+Muitas pessoas têm dificuldade em organizar seus gastos e planejar objetivos financeiros simples, como criar uma reserva de emergência ou acompanhar despesas mensais. As soluções existentes costumam ser complexas, técnicas demais ou dependentes de serviços pagos.
 
-[Sua descrição aqui]
+### 💡 2. A Solução (1 min)
 
-### 2. A Solução (1 min)
-> Como seu agente resolve esse problema?
+O SAM, Smart Assistant for Money Planning, é um assistente de planejamento financeiro baseado em IA generativa.
+Ele ajuda o usuário a entender seus gastos, simular cenários financeiros e acompanhar metas, utilizando apenas informações fornecidas pelo próprio usuário e dados mockados.
 
-[Sua descrição aqui]
+O agente atua com cuidado, sem fazer recomendações financeiras ou promessas, focando exclusivamente em planejamento.
 
-### 3. Demonstração (1 min)
-> Mostre o agente funcionando (pode ser gravação de tela)
+### 🖥️ 3. Demonstração (1 min)
 
-[Descreva o que será mostrado]
+Na demonstração, mostro o SAM funcionando em uma interface simples desenvolvida com Streamlit.
+O usuário interage com o assistente em tempo real, que utiliza um modelo de linguagem executando localmente via Ollama, sem dependência de APIs externas.
 
-### 4. Diferencial e Impacto (30 seg)
-> Por que essa solução é inovadora e qual é o impacto dela na sociedade?
+### 🚀 4. Diferencial e Impacto (30 seg)
 
-[Sua descrição aqui]
+O grande diferencial do SAM é que ele roda totalmente em ambiente local, em localhost, sem custos com APIs ou consumo de tokens pagos.
+Além disso, respeita a privacidade do usuário e possui limites claros de atuação, tornando o planejamento financeiro mais acessível, seguro e democrático.
 
 ---
 
 ## Checklist do Pitch
 
-- [ ] Duração máxima de 3 minutos
-- [ ] Problema claramente definido
-- [ ] Solução demonstrada na prática
-- [ ] Diferencial explicado
-- [ ] Áudio e vídeo com boa qualidade
+- [x] Duração máxima de 3 minutos
+- [x] Problema claramente definido
+- [x] Solução demonstrada na prática
+- [x] Diferencial explicado
+- [x] Áudio e vídeo com boa qualidade
 
 ---
 
