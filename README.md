@@ -1,138 +1,71 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+# 🤖 SAM - Smart Assistant for Money Planning
 
-## Contexto
-
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
-
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
-
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+Assistente inteligente de planejamento financeiro desenvolvido com IA Generativa, focado em simulações e organização financeira pessoal.
 
 ---
 
-## O Que Você Deve Entregar
+## 📋 Sobre o Projeto
 
-### 1. Documentação do Agente
+O **SAM** é um agente financeiro inteligente que auxilia usuários na organização de finanças, simulação de cenários e definição de metas financeiras. Diferente de chatbots tradicionais, o SAM atua de forma consultiva, analítica e responsável, sempre baseando suas respostas em dados fornecidos pelo usuário.
 
-Defina **o que** seu agente faz e **como** ele funciona:
+### 🎯 Principais Funcionalidades
 
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
-
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
-
----
-
-### 2. Base de Conhecimento
-
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
-
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
-
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
-
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
+- **Análise de gastos mensais** por categoria
+- **Simulação de cenários** financeiros
+- **Acompanhamento de metas** e objetivos
+- **Sugestões contextualizadas** baseadas no perfil do usuário
+- **Respostas seguras** sem alucinações ou informações inventadas
 
 ---
 
-### 3. Prompts do Agente
+## 🏗️ Arquitetura
 
-Documente os prompts que definem o comportamento do seu agente:
+```mermaid
+flowchart TD
+    A[Usuário] -->|Mensagem| B[Interface Streamlit]
+    B -->|Contexto| C[LLM - Ollama]
+    C -->|Consulta| D[Base de Dados]
+    D -->|JSON/CSV| C
+    C --> E[Validação de Escopo]
+    E --> F[Resposta]
+    F --> A
+```
 
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
+### Componentes Principais
 
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
-
----
-
-### 4. Aplicação Funcional
-
-Desenvolva um **protótipo funcional** do seu agente:
-
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
-
-📁 **Pasta:** [`src/`](./src/)
+- **Interface**: Streamlit
+- **LLM**: Ollama (Llama3 - execução local)
+- **Base de Conhecimento**: JSON e CSV mockados
+- **Validação**: Regras de escopo e consistência financeira
 
 ---
 
-### 5. Avaliação e Métricas
-
-Descreva como você avalia a qualidade do seu agente:
-
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
-
----
-
-## Ferramentas Sugeridas
-
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
-
----
-
-## Estrutura do Repositório
+## 📂 Estrutura do Projeto
 
 ```
 📁 lab-agente-financeiro/
 │
-├── 📄 README.md
+├── 📄 README.md                      # Você está aqui!
 │
 ├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
+│   ├── historico_atendimento.csv     # Histórico de atendimentos
+│   ├── perfil_investidor.json        # Perfil do cliente
+│   ├── produtos_financeiros.json     # Produtos disponíveis
+│   └── transacoes.csv                # Histórico de transações
 │
-├── 📁 docs/                          # Documentação do projeto
+├── 📁 docs/                          # 📚 Documentação completa do projeto
 │   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
 │   ├── 02-base-conhecimento.md       # Estratégia de dados
 │   ├── 03-prompts.md                 # Engenharia de prompts
 │   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
+│   └── 05-pitch.md                   # Roteiro do pitch e vídeo
 │
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
+├── 📁 src/                           # Código-fonte da aplicação
+│   ├── app.py                        # Aplicação principal (Streamlit)
+│   └── README.md                     # Instruções de execução
 │
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
+├── 📁 assets/                        # Recursos visuais
+│   └── ...                          # Diagramas e screenshots
 │
 └── 📁 examples/                      # Referências e exemplos
     └── README.md
@@ -140,10 +73,166 @@ Todas as ferramentas abaixo possuem versões gratuitas:
 
 ---
 
-## Dicas Finais
+## 🚀 Como Executar
 
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+### Pré-requisitos
+
+- Python 3.10+
+- Ollama instalado ([ollama.com](https://ollama.com))
+- Modelo Llama3 disponível no Ollama
+
+### Instalação
+
+```bash
+# 1. Clone o repositório
+git clone <seu-repositorio>
+cd lab-agente-financeiro
+
+# 2. Instale as dependências
+pip install streamlit pandas requests
+
+# 3. Verifique se o Ollama está rodando
+ollama serve
+
+# 4. Execute a aplicação
+streamlit run src/app.py
+```
+
+A aplicação estará disponível em `http://localhost:8501`
+
+---
+
+## 💬 Exemplo de Uso
+
+### Consulta de Gastos
+
+**Usuário:**
+```
+Quanto gastei com alimentação no último mês?
+```
+
+**SAM:**
+```
+Com base nos dados de transações, você gastou R$ 570,00 com alimentação 
+no último mês (supermercado R$ 450,00 + restaurante R$ 120,00).
+```
+
+### Planejamento de Reserva
+
+**Usuário:**
+```
+Tenho R$ 10.000 guardados. Isso é suficiente como reserva de emergência?
+```
+
+**SAM:**
+```
+Com base nas suas informações, posso ajudar com uma simulação. 
+Em geral, uma reserva de emergência costuma cobrir de 3 a 6 meses 
+de despesas essenciais. Se quiser, posso analisar seus gastos mensais 
+e simular se o valor atual atende a esse objetivo.
+```
+
+### Pergunta Fora do Escopo
+
+**Usuário:**
+```
+Qual a previsão do tempo para amanhã?
+```
+
+**SAM:**
+```
+Sou um agente focado em planejamento e simulação financeira e não 
+possuo informações sobre previsão do tempo. Posso ajudar com algo 
+relacionado às suas finanças?
+```
+
+---
+
+## 📊 Base de Conhecimento
+
+O SAM utiliza dados mockados para demonstração:
+
+| Arquivo | Descrição |
+|---------|-----------|
+| `perfil_investidor.json` | Perfil financeiro do usuário |
+| `transacoes.csv` | Histórico de transações |
+| `historico_atendimento.csv` | Atendimentos anteriores |
+| `produtos_financeiros.json` | Produtos financeiros disponíveis |
+
+---
+
+## 📚 Documentação Completa
+
+Toda a documentação detalhada do projeto está disponível na pasta **`docs/`**:
+
+| Documento | Descrição |
+|-----------|-----------|
+| **[01-documentacao-agente.md](docs/01-documentacao-agente.md)** | Caso de uso, persona, arquitetura e estratégias de segurança |
+| **[02-base-conhecimento.md](docs/02-base-conhecimento.md)** | Estratégia de integração e uso dos dados mockados |
+| **[03-prompts.md](docs/03-prompts.md)** | System prompt, exemplos de interação e edge cases |
+| **[04-metricas.md](docs/04-metricas.md)** | Critérios de avaliação, testes e resultados |
+| **[05-pitch.md](docs/05-pitch.md)** | Roteiro do pitch e vídeo de apresentação |
+
+---
+
+## 🔒 Princípios de Segurança
+
+- ✅ Respostas baseadas **exclusivamente** em dados fornecidos
+- ✅ Linguagem **condicional** em simulações
+- ✅ **Reconhecimento de limitações** quando não há dados
+- ✅ **Sem recomendações** financeiras personalizadas
+- ✅ **Não acessa** dados sensíveis (senhas, credenciais)
+- ✅ **Não realiza** ações automáticas em nome do usuário
+
+---
+
+## 📈 Avaliação
+
+O SAM foi testado em três métricas principais:
+
+- **Assertividade**: Respostas precisas baseadas nos dados
+- **Segurança**: Ausência de alucinações ou informações inventadas
+- **Coerência**: Adequação ao perfil do usuário
+
+### Resultados dos Testes
+
+- ✅ Consultas de gastos respondidas corretamente
+- ✅ Reconhecimento adequado de perguntas fora do escopo
+- ✅ Admissão de limitações quando informação não disponível
+- ✅ Respostas coerentes com perfil financeiro do usuário
+
+> 📊 Detalhes completos da avaliação em **[docs/04-metricas.md](docs/04-metricas.md)**
+
+---
+
+## 🎥 Demonstração
+
+[🎬 Vídeo de apresentação do SAM](https://github.com/user-attachments/assets/eb22c501-3bec-4c99-a865-5dcea321a5fc)
+
+> 📝 Roteiro completo do pitch em **[docs/05-pitch.md](docs/05-pitch.md)**
+
+---
+
+## 🎯 Diferenciais
+
+- **Execução 100% local** via Ollama (sem custos com APIs)
+- **Privacidade garantida** (dados não saem da máquina)
+- **Escopo bem definido** (apenas planejamento financeiro)
+- **Simulações responsáveis** (sem promessas ou garantias)
+- **Linguagem acessível** e profissional
+
+---
+
+## 📝 Licença
+
+Este projeto foi desenvolvido como desafio educacional da DIO (Digital Innovation One).
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido como parte do desafio **Agente Financeiro Inteligente com IA Generativa**.
+
+---
+
+**SAM** - *Planejamento financeiro inteligente, seguro e acessível.* 💰🤖
