@@ -37,4 +37,6 @@ Além disso, respeita a privacidade do usuário e possui limites claros de atua�
 
 > Cole aqui o link do seu pitch (YouTube, Loom, Google Drive, etc.)
 
-[Link do vídeo]
+https://github.com/user-attachments/assets/e032ecbe-667d-4487-a2b0-90db7bb54a78
+
+
