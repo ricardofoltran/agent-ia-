@@ -33,10 +33,9 @@ Além disso, respeita a privacidade do usuário e possui limites claros de atua�
 
 ---
 
-## Link do Vídeo
 
-> Cole aqui o link do seu pitch (YouTube, Loom, Google Drive, etc.)
+##  Vídeo de Apresentação do SAM
 
-https://github.com/user-attachments/assets/e032ecbe-667d-4487-a2b0-90db7bb54a78
+https://github.com/user-attachments/assets/eb22c501-3bec-4c99-a865-5dcea321a5fc
 
 
